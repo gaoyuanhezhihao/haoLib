@@ -1,0 +1,2 @@
+add_executable(demo_margin_mat demo_margin_mat.cpp)
+target_link_libraries(demo_margin_mat margin_mat)
