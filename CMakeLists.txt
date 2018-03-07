@@ -11,6 +11,7 @@ SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 SET(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 SET(CMAKE_INCLUDE_CURRENT_DIR ON)
 
+enable_testing()
 add_subdirectory(config)
 add_subdirectory(data_structure)
 #set(Boost_USE_STATIC_LIBS        ON) # only find static libs
