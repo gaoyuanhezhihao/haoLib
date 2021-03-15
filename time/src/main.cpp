@@ -2,16 +2,18 @@
 #include <iostream>
 #include <string>
 #include <chrono>
+#include <thread>
+#include "tree_timer.h"
 
 using namespace std;
 using namespace std::chrono;
 
 int main(int argc, const char ** argv){
 
-  system_clock::time_point clock_end = system_clock::now();
-  //cout << clock_end.time_since_epoch() << endl;
-  system_clock::duration time_since = clock_end.time_since_epoch();
-  double nseconds = double(time_since.count()) * system_clock::period::num / system_clock::period::den;
-  printf("%.2f\n", nseconds);
+  auto tm = TreeTimer::Create("test");
+  std::chrono::time_point<std::chrono::steady_clock> start = std::chrono::steady_clock::now();
+  this_thread::sleep_for(chrono::milliseconds(200));
+  std::chrono::duration<double> diff = std::chrono::steady_clock::now() - start;
+  std::cout << " ints : " << diff.count() << " s\n";
   return 0;
 }

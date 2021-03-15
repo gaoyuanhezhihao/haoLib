@@ -13,6 +13,9 @@ SET(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 set(Boost_USE_STATIC_LIBS        ON) # only find static libs
 find_package(Boost COMPONENTS filesystem regex)
+
+add_subdirectory(tree_timer)
+
 include_directories(${Boost_INCLUDE_DIRS})
 add_executable(runner src/main.cpp)
-target_link_libraries(runner ${Boost_LIBRARIES})
+target_link_libraries(runner ${Boost_LIBRARIES} tree_timer)
