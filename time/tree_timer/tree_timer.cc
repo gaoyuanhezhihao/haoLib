@@ -31,4 +31,11 @@ TreeTimer::~TreeTimer() {
   }
 }
 
+void TreeTimer::RecordSubTime(std::shared_ptr<TimeRecord> sub) {
+  if (subs_.find(sub->GetName()) != subs_.end()) {
+    subs_[sub->GetName()]->Merge(sub);
+  } else {
+    subs_.insert({sub->GetName(), sub});
+  }
+}
 

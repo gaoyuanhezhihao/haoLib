@@ -19,3 +19,6 @@ add_subdirectory(tree_timer)
 include_directories(${Boost_INCLUDE_DIRS})
 add_executable(runner src/main.cpp)
 target_link_libraries(runner ${Boost_LIBRARIES} tree_timer)
+
+add_executable(time_of_file src/time_of_file)
+target_link_libraries(time_of_file ${Boost_LIBRARIES} )
